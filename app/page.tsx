@@ -8,8 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Github, Mail, Linkedin, Globe, ExternalLink, FileUser } from "lucide-react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+// import { ShootingStars } from "@/components/ui/shooting-stars";
+// import { StarsBackground } from "@/components/ui/stars-background";
 import Image from "next/image";
 
 const stacks = [
