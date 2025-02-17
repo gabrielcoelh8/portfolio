@@ -9,11 +9,11 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: 'gist.github.com',
       },
       {
         protocol: 'https',
-        hostname: 'assets.aceternity.com',
+        hostname: 'raw.githubusercontent.com',
       }
     ],
   },

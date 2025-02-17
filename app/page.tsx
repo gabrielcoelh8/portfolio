@@ -2,54 +2,100 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Button as ButtonMovingBorder } from "@/components/ui/moving-border";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Github, Mail, Linkedin, Globe, ExternalLink } from "lucide-react";
+import { Github, Mail, Linkedin, Globe, ExternalLink, FileUser } from "lucide-react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 import Image from "next/image";
 
 const stacks = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
+    name: "Python",
+    designation: "FastAPI, Selenium, pytest",
     image:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
+    name: "React",
+    designation: "Router, Tailwind CSS",
     image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react.png",
   },
   {
     id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
+    name: "Node",
+    designation: "API REST, Express, ORM",
     image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/node_js.png",
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
+    name: "Typescript",
+    designation: "Javascript",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png",
   },
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
+    name: "Next JS",
+    designation: "Routing, PrismaORM, Vercel",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
+    name: "Java",
+    designation: "DSA, OOP",
     image:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png",
+  },
+  {
+    id: 7,
+    name: "Spring Boot",
+    designation: "MVC, API REST, Maven, Thymeleaf",
+    image:
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring_boot.png",
+  },
+  {
+    id: 8,
+    name: "Laravel",
+    designation: "PHP, Blade",
+    image:
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/laravel.png",
+  },
+  {
+    id: 9,
+    name: "Postgres",
+    designation: "SQL, Normalização",
+    image:
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png",
+  },
+  {
+    id: 10,
+    name: "Docker",
+    designation: "Containêrs, compose",
+    image:
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png",
+  },
+  {
+    id: 11,
+    name: "Ubuntu",
+    designation: "WSL, Terminal",
+    image:
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ubuntu.png",
+  },
+  {
+    id: 12,
+    name: "Godot",
+    designation: "Game Design, GDScript, C#",
+    image:
+      "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/godot.png",
   },
 ];
 
@@ -57,7 +103,7 @@ const projects = [
   {
     title: "Projeto 1",
     description: "Descrição detalhada do projeto 1",
-    image: "/project1.png",
+    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
     github: "https://github.com/seu-usuario/projeto1",
     deploy: "https://projeto1.com",
     tech: ["React", "TypeScript", "Node.js"]
@@ -65,7 +111,7 @@ const projects = [
   {
     title: "Projeto 2",
     description: "Descrição detalhada do projeto 1",
-    image: "/project1.png",
+    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
     github: "https://github.com/seu-usuario/projeto1",
     deploy: "https://projeto1.com",
     tech: ["React", "TypeScript", "Node.js"]
@@ -73,7 +119,7 @@ const projects = [
   {
     title: "Projeto 3",
     description: "Descrição detalhada do projeto 1",
-    image: "/project1.png",
+    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
     github: "https://github.com/seu-usuario/projeto1",
     deploy: "https://projeto1.com",
     tech: ["React", "TypeScript", "Node.js"]
@@ -81,37 +127,54 @@ const projects = [
   {
     title: "Projeto 4",
     description: "Descrição detalhada do projeto 1",
-    image: "/project1.png",
+    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
     github: "https://github.com/seu-usuario/projeto1",
     deploy: "https://projeto1.com",
     tech: ["React", "TypeScript", "Node.js"]
   },
 ];
 
+const words = `Gabriel Roberto Alves Coelho`;
+
 export default function Portfolio() {
   return (
+    // <ShootingStars />
+    // <StarsBackground />
     <div className="min-h-screen bg-background text-foreground p-8">
       {/* Header Section */}
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row gap-6 items-start mb-12">
           {/* Avatar */}
-          <Avatar className="w-32 h-32">
-            <AvatarImage src="https://avatars.githubusercontent.com/u/64715936?v=4" />
-            <AvatarFallback>GH</AvatarFallback>
-          </Avatar>
+          <ButtonMovingBorder
+            borderRadius="4rem"
+            className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+          >
+            <Avatar className="w-32 h-32">
+              <AvatarImage src="https://avatars.githubusercontent.com/u/64715936?v=4" />
+              <AvatarFallback>GH</AvatarFallback>
+            </Avatar>
+          </ButtonMovingBorder>
 
           {/* Info */}
           <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-2">Gabriel R. Alves Coelho</h1>
+            <TextGenerateEffect words={words} />
+            <p className="text-lg text-muted-foreground mb-4">
+              $ Desenvolvedor Full Stack <br />
+              $ Tecnólogo em Sistemas para Internet (IFMS - 06/2021 até 12/2023)
+            </p>
             <p className="text-xl text-muted-foreground mb-4">
-              Desenvolvedor Full Stack
+              
             </p>
             
             {/* Contacts */}
             <div className="flex gap-4 mb-4">
-              <a href="mailto:seu@email.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <a href="" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                <FileUser className="w-5 h-5" />
+                <span>CV</span>
+              </a>
+              <a href="mailto:gabrielrobertoac@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Mail className="w-5 h-5" />
-                <span>gabrielrobertoac@gmail.com</span>
+                <span>E-mail</span>
               </a>
               <a href="https://www.linkedin.com/in/gabriel-roberto-785472217/" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Linkedin className="w-5 h-5" />
@@ -121,6 +184,7 @@ export default function Portfolio() {
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
               </a>
+              
             </div>
           </div>
         </div>
