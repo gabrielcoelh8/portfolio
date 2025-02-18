@@ -101,36 +101,36 @@ const stacks = [
 
 const projects = [
   {
-    title: "Projeto 1",
-    description: "Descrição detalhada do projeto 1",
-    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
-    github: "https://github.com/seu-usuario/projeto1",
-    deploy: "https://projeto1.com",
-    tech: ["React", "TypeScript", "Node.js"]
+    title: "Westron",
+    description: "API para tradução de textos e análise de sentimentos positivos",
+    image: "https://gist.github.com/user-attachments/assets/fb2d9cb8-969e-403e-b77e-7dd2651b396b",
+    github: "https://github.com/gabrielcoelh8/westron-api",
+    deploy: "",
+    tech: ["Python", "Docker", "MongoDB", "LLM"]
   },
   {
-    title: "Projeto 2",
-    description: "Descrição detalhada do projeto 1",
-    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
-    github: "https://github.com/seu-usuario/projeto1",
-    deploy: "https://projeto1.com",
-    tech: ["React", "TypeScript", "Node.js"]
+    title: "WAJD - Jogo educacional",
+    description: "Jogo educacional para ensino de algoritmos e estrutura de dados",
+    image: "https://user-images.githubusercontent.com/64715936/278706322-7c3f7beb-8dee-4550-ae02-e8ec1213f944.png",
+    github: "https://github.com/gabrielcoelh8/wajd-game",
+    deploy: "https://wajdsort.netlify.app",
+    tech: ["GDScript", "Godot", "Deploy"]
   },
   {
-    title: "Projeto 3",
-    description: "Descrição detalhada do projeto 1",
+    title: "Louvre",
+    description: "CRUD de itens de museu com autenticação e geração de PDF",
     image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
-    github: "https://github.com/seu-usuario/projeto1",
-    deploy: "https://projeto1.com",
-    tech: ["React", "TypeScript", "Node.js"]
+    github: "https://github.com/gabrielcoelh8/louvre-laravel",
+    deploy: "",
+    tech: ["Bootstrap", "Laravel", "DomPDF"]
   },
   {
-    title: "Projeto 4",
-    description: "Descrição detalhada do projeto 1",
-    image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
-    github: "https://github.com/seu-usuario/projeto1",
-    deploy: "https://projeto1.com",
-    tech: ["React", "TypeScript", "Node.js"]
+    title: "Blog pessoal",
+    description: "Blog de contos de minha autoria, escritos em Markdown",
+    image: "https://gist.github.com/user-attachments/assets/0892c42e-a910-4d27-a12a-62d40e736ab2",
+    github: "https://github.com/gabrielcoelh8/blog",
+    deploy: "https://pfk.netlify.app/main",
+    tech: ["HTML", "MDBook", "Netlify"]
   },
 ];
 
@@ -168,19 +168,19 @@ export default function Portfolio() {
             
             {/* Contacts */}
             <div className="flex gap-4 mb-4">
-              <a href="" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <a href="https://docs.google.com/document/d/e/2PACX-1vSCJChJFdMMDqOtUa2pOFSYsz2KXkSjAhZjNUnvBFXrK10yEZjWcrzE3dp_DSQaFA/pub" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <FileUser className="w-5 h-5" />
                 <span>CV</span>
               </a>
-              <a href="mailto:gabrielrobertoac@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <a href="mailto:gabrielrobertoac@gmail.com" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Mail className="w-5 h-5" />
                 <span>E-mail</span>
               </a>
-              <a href="https://www.linkedin.com/in/gabriel-roberto-785472217/" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <a href="https://www.linkedin.com/in/gabriel-roberto-785472217/" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Linkedin className="w-5 h-5" />
                 <span>LinkedIn</span>
               </a>
-              <a href="https://github.com/gabrielcoelh8" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <a href="https://github.com/gabrielcoelh8" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
               </a>
@@ -228,11 +228,21 @@ export default function Portfolio() {
                   <Button variant="outline" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
-                      Código
+                      Repositório
                     </a>
                   </Button>
-                  <Button asChild>
-                    <a href={project.deploy} target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    asChild 
+                    disabled={!project.deploy} 
+                    className={!project.deploy ? 'cursor-not-allowed opacity-60' : ''}
+                  >
+                    <a 
+                      href={project.deploy || '#'} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={!project.deploy ? 'pointer-events-none' : ''}
+                      onClick={(e) => !project.deploy && e.preventDefault()}
+                    >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Ver Demo
                     </a>
