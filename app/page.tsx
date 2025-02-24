@@ -8,8 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { Github, Mail, Linkedin, Globe, ExternalLink, FileUser } from "lucide-react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-// import { ShootingStars } from "@/components/ui/shooting-stars";
-// import { StarsBackground } from "@/components/ui/stars-background";
 import Image from "next/image";
 
 const stacks = [
@@ -102,10 +100,10 @@ const stacks = [
 const projects = [
   {
     title: "Westron",
-    description: "API para tradução de textos e análise de sentimentos positivos",
+    description: "API para tradução de textos, análise de sentimentos positivos e correção automática em tempo real",
     image: "https://gist.github.com/user-attachments/assets/fb2d9cb8-969e-403e-b77e-7dd2651b396b",
     github: "https://github.com/gabrielcoelh8/westron-api",
-    deploy: "",
+    deploy: "https://westron-api.onrender.com/docs/",
     tech: ["Python", "Docker", "MongoDB", "LLM"]
   },
   {
@@ -118,7 +116,7 @@ const projects = [
   },
   {
     title: "Louvre",
-    description: "CRUD de itens de museu com autenticação e geração de PDF",
+    description: "CRUD de itens de museu com autenticação e geração de relatório em PDF",
     image: "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
     github: "https://github.com/gabrielcoelh8/louvre-laravel",
     deploy: "",
@@ -126,7 +124,7 @@ const projects = [
   },
   {
     title: "Blog pessoal",
-    description: "Blog de contos de minha autoria, escritos em Markdown",
+    description: "Blog de contos de minha autoria, escritos em Markdown e gerados com MDBook, com arquitetura pré-definida",
     image: "https://gist.github.com/user-attachments/assets/0892c42e-a910-4d27-a12a-62d40e736ab2",
     github: "https://github.com/gabrielcoelh8/blog",
     deploy: "https://pfk.netlify.app/main",
@@ -134,7 +132,7 @@ const projects = [
   },
 ];
 
-const words = `Gabriel Roberto Alves Coelho`;
+const name = `Gabriel Roberto Alves Coelho`;
 
 export default function Portfolio() {
   return (
@@ -157,10 +155,10 @@ export default function Portfolio() {
 
           {/* Info */}
           <div className="flex-1">
-            <TextGenerateEffect words={words} />
+            <TextGenerateEffect words={name} />
             <p className="text-lg text-muted-foreground mb-4">
               $ Desenvolvedor Full Stack <br />
-              $ Tecnólogo em Sistemas para Internet (IFMS - 06/2021 até 12/2023)
+              $ Tecnólogo em Sistemas para Internet
             </p>
             <p className="text-xl text-muted-foreground mb-4">
               
@@ -168,13 +166,13 @@ export default function Portfolio() {
             
             {/* Contacts */}
             <div className="flex gap-4 mb-4">
-              <a href="https://docs.google.com/document/d/e/2PACX-1vSCJChJFdMMDqOtUa2pOFSYsz2KXkSjAhZjNUnvBFXrK10yEZjWcrzE3dp_DSQaFA/pub" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+              <a href="/cv/CV-GabrielRobertoAlvesCoelho.pdf" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <FileUser className="w-5 h-5" />
-                <span>CV</span>
+                <span>Baixar CV</span>
               </a>
               <a href="mailto:gabrielrobertoac@gmail.com" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Mail className="w-5 h-5" />
-                <span>E-mail</span>
+                <span>Enviar e-mail</span>
               </a>
               <a href="https://www.linkedin.com/in/gabriel-roberto-785472217/" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
                 <Linkedin className="w-5 h-5" />
@@ -228,7 +226,7 @@ export default function Portfolio() {
                   <Button variant="outline" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
-                      Repositório
+                      Código/Docs
                     </a>
                   </Button>
                   <Button 
