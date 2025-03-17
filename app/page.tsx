@@ -5,33 +5,45 @@ import AvatarComponent from "@/components/avatar-component";
 import InfoComponent from "@/components/info-component";
 import TechStack from "@/components/tech-stack";
 import Projects from "@/components/projects";
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { prismaService } from '@/lib/database';
+import { User } from "@/types/user";
 
 export default function Portfolio() {
+  const parallax = useRef<IParallax>(null!)
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    async function fetchUser() {
+      const data = await prismaService.getUser();
+      setUser(data);
+    }
+    fetchUser();
+  }, []);
+
   const myInfo = {
-    name: "Gabriel Roberto Alves Coelho",
-    title: "Desenvolvedor Full Stack",
-    education: "Tecnólogo em Sistemas para Internet",
+    name: user?.name,
+    title: user?.title,
+    education: user?.education,
     contacts: {
       cv: {
-        url: "/cv/CV-GabrielRobertoAlvesCoelho.pdf",
+        url: user?.cv,
         label: "Baixar CV"
       },
       email: {
-        url: "mailto:gabrielrobertoac@gmail.com",
+        url: `mailto:${user?.email}`,
         label: "Enviar e-mail"
       },
       linkedin: {
-        url: "https://www.linkedin.com/in/gabriel-roberto-785472217/",
+        url: user?.linkedin,
         label: "LinkedIn"
       },
       github: {
-        url: "https://github.com/gabrielcoelh8",
+        url: user?.github,
         label: "GitHub"
       }
     }
   };
-  const parallax = useRef<IParallax>(null!)
 
   return (
       <Parallax ref={parallax} pages={2} style={{ width: '100%', height: '100%', top: '0', left: '0' }} >
