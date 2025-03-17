@@ -4,8 +4,8 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { LucideIcon } from 'lucide-react';
 
 interface ContactInfo {
-  url: string;
-  label: string;
+  url: string | null | undefined;
+  label: string | null | undefined;
 }
 
 interface Contacts {
@@ -16,9 +16,9 @@ interface Contacts {
 }
 
 interface InfoComponentProps {
-  name: string; 
-  title: string;
-  education: string;
+  name: string | null | undefined;
+  title: string | null | undefined;
+  education: string | null | undefined;
   contacts: Contacts;
 }
 
@@ -47,23 +47,23 @@ const InfoComponent: React.FC<InfoComponentProps> = ({
 
   return (
     <div className="flex-1">
-      <TextGenerateEffect words={name} />
+      <TextGenerateEffect words={name ?? ''} />
       <p className="text-lg mb-4">
         $ {title} <br />
         $ {education}
       </p>
       
       <div className="flex gap-4 mb-4">
-        <ContactLink href={contacts.cv.url} icon={FileUser}>
+        <ContactLink href={contacts.cv.url ?? ''} icon={FileUser}>
           {contacts.cv.label}
         </ContactLink>
-        <ContactLink href={contacts.email.url} icon={Mail}>
+        <ContactLink href={contacts.email.url ?? ''} icon={Mail}>
           {contacts.email.label}
         </ContactLink>
-        <ContactLink href={contacts.linkedin.url} icon={Linkedin}>
+        <ContactLink href={contacts.linkedin.url ?? ''} icon={Linkedin}>
           {contacts.linkedin.label}
         </ContactLink>
-        <ContactLink href={contacts.github.url} icon={Github}>
+        <ContactLink href={contacts.github.url ?? ''} icon={Github}>
           {contacts.github.label}
         </ContactLink>
       </div>
