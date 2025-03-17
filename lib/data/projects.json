@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Westron",
+        "description": "API para tradução de textos, análise de sentimentos positivos e correção automática em tempo real",
+        "image": "https://gist.github.com/user-attachments/assets/fb2d9cb8-969e-403e-b77e-7dd2651b396b",
+        "github": "https://github.com/gabrielcoelh8/westron-api",
+        "deploy": "https://westron-api.onrender.com/docs/",
+        "stacks": ["Python", "Docker"]
+    },
+    {
+        "title": "WAJD - Jogo educacional",
+        "description": "Jogo educacional para ensino de algoritmos e estrutura de dados",
+        "image": "https://user-images.githubusercontent.com/64715936/278706322-7c3f7beb-8dee-4550-ae02-e8ec1213f944.png",
+        "github": "https://github.com/gabrielcoelh8/wajd-game",
+        "deploy": "https://wajdsort.netlify.app",
+        "stacks": ["Godot"]
+    },
+    {
+        "title": "Louvre",
+        "description": "CRUD de itens de museu com autenticação e geração de relatório em PDF",
+        "image": "https://gist.github.com/user-attachments/assets/161111e9-9942-48c5-979a-878953f6c811",
+        "github": "https://github.com/gabrielcoelh8/louvre-laravel",
+        "deploy": "",
+        "stacks": ["Laravel", "Postgres"]
+    },
+    {
+        "title": "Blog pessoal",
+        "description": "Blog de contos de minha autoria, escritos em Markdown e gerados com MDBook, com arquitetura pré-definida",
+        "image": "https://gist.github.com/user-attachments/assets/0892c42e-a910-4d27-a12a-62d40e736ab2",
+        "github": "https://github.com/gabrielcoelh8/blog",
+        "deploy": "https://pfk.netlify.app/main",
+        "stacks": ["HTML/CSS"]
+    }
+]

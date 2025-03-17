@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Python",
+        "designation": "FastAPI, Selenium, pytest",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png"
+    },
+    {
+        "name": "React",
+        "designation": "Router, Tailwind CSS",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react.png"
+    },
+    {
+        "name": "Node",
+        "designation": "API REST, Express, ORM",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/node_js.png"
+    },
+    {
+        "name": "Typescript",
+        "designation": "Javascript",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png"
+    },
+    {
+        "name": "NextJS",
+        "designation": "Routing, PrismaORM, Vercel",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png"
+    },
+    {
+        "name": "Java",
+        "designation": "DSA, OOP",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png"
+    },
+    {
+        "name": "Spring Boot",
+        "designation": "MVC, API REST, Maven, Thymeleaf",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring_boot.png"
+    },
+    {
+        "name": "Laravel",
+        "designation": "PHP, Blade",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/laravel.png"
+    },
+    {
+        "name": "Postgres",
+        "designation": "SQL, Normalização",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png"
+    },
+    {
+        "name": "Docker",
+        "designation": "Containêrs, compose",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png"
+    },
+    {
+        "name": "Ubuntu",
+        "designation": "WSL, Terminal",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ubuntu.png"
+    },
+    {
+        "name": "Godot",
+        "designation": "Game Design, GDScript, C#",
+        "image":
+            "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/godot.png"
+    },
+    {
+        "name": "HTML/CSS",
+        "designation": "Web Design, Markdown",
+        "image":
+            "https://raw.githubusercontent.com/tandpfun/skill-icons/refs/heads/main/icons/HTML.svg"
+    }
+]
