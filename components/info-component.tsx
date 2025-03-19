@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, Mail, Linkedin, FileUser } from "lucide-react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { LucideIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface ContactInfo {
   url: string | null | undefined;
@@ -22,10 +23,11 @@ interface InfoComponentProps {
   contacts: Contacts;
 }
 
-interface ContactLinkProps {
+interface ContactButtonProps {
   href: string;
   icon: LucideIcon;
   children: React.ReactNode;
+  disabled?: boolean;
 }
 
 const InfoComponent: React.FC<InfoComponentProps> = ({
@@ -34,15 +36,24 @@ const InfoComponent: React.FC<InfoComponentProps> = ({
   education,
   contacts
 }) => {
-  const ContactLink: React.FC<ContactLinkProps> = ({ href, icon: Icon, children }) => (
-    <a
-      href={href}
-      target="_blank"
-      className="flex items-center gap-2 hover:text-primary"
+  const ContactButton: React.FC<ContactButtonProps> = ({ href, icon: Icon, children, disabled }) => (
+    <Button
+      variant="default"
+      className="bg-black text-white hover:bg-gray-800 dark:bg-black dark:hover:bg-gray-800"
+      size="sm"
+      asChild
+      disabled={disabled || !href}
     >
-      <Icon className="w-5 h-5" />
-      <span>{children}</span>
-    </a>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2"
+      >
+        <Icon className="w-4 h-4" />
+        <span>{children}</span>
+      </a>
+    </Button>
   );
 
   return (
@@ -53,19 +64,35 @@ const InfoComponent: React.FC<InfoComponentProps> = ({
         $ {education}
       </p>
       
-      <div className="flex gap-4 mb-4">
-        <ContactLink href={contacts.cv.url ?? ''} icon={FileUser}>
+      <div className="flex flex-wrap gap-3 mb-4">
+        <ContactButton 
+          href={contacts.cv.url ?? ''} 
+          icon={FileUser}
+          disabled={!contacts.cv.url}
+        >
           {contacts.cv.label}
-        </ContactLink>
-        <ContactLink href={contacts.email.url ?? ''} icon={Mail}>
+        </ContactButton>
+        <ContactButton 
+          href={contacts.email.url ?? ''} 
+          icon={Mail}
+          disabled={!contacts.email.url}
+        >
           {contacts.email.label}
-        </ContactLink>
-        <ContactLink href={contacts.linkedin.url ?? ''} icon={Linkedin}>
+        </ContactButton>
+        <ContactButton 
+          href={contacts.linkedin.url ?? ''} 
+          icon={Linkedin}
+          disabled={!contacts.linkedin.url}
+        >
           {contacts.linkedin.label}
-        </ContactLink>
-        <ContactLink href={contacts.github.url ?? ''} icon={Github}>
+        </ContactButton>
+        <ContactButton 
+          href={contacts.github.url ?? ''} 
+          icon={Github}
+          disabled={!contacts.github.url}
+        >
           {contacts.github.label}
-        </ContactLink>
+        </ContactButton>
       </div>
     </div>
   );
